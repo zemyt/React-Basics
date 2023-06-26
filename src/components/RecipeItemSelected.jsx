@@ -21,12 +21,12 @@ export const RecipeItemSelected = ({ recipe, clickFn }) => {
         minW={{
           base: "clamp(95%, 95%, 99%)",
           sm: "clamp(75%, 95%, 95%)",
-          md: "clamp(700px, 750px, 800px)",
+          md: "clamp(700px, 750px, 95%)",
           lg: "clamp(800px, 800px, 800px)",
         }}
         maxW="900"
         backgroundColor={"white"}
-        transition="min-width 0.4s ease"
+        transition="min-width 0.3s ease"
       >
         <Flex>
           <Button
@@ -68,9 +68,13 @@ export const RecipeItemSelected = ({ recipe, clickFn }) => {
               Servings: <Text as="b">{recipe.yield}</Text>
             </Text>
             <Text fontWeight={450}>Ingredients:</Text>
-            {recipe.ingredientLines.map((ing) => (
-              <Text key={ing}>• {ing}</Text>
-            ))}
+            {recipe.ingredientLines.map((ing) =>
+              ing[0] === "*" && ing[1] === " " ? (
+                <Text key={ing}>• {ing.slice(2)}</Text>
+              ) : (
+                <Text key={ing}>• {ing}</Text>
+              )
+            )}
           </Box>
           <Box w={{ base: "100%", sm: "100%", md: "50%", lg: "50%" }} p="3rem">
             {recipe.healthLabels.length > 0 && (
@@ -144,13 +148,3 @@ export const RecipeItemSelected = ({ recipe, clickFn }) => {
     </>
   );
 };
-
-// totalNutrients
-// Total nutrients (Energy in kcal, protein, fat, carbs, cholesterol, sodium)
-
-// ENERC_KCAL = calories
-// CHOCDF = carbs
-// PROCNT = protein
-// FAT = fat
-// CHOLE = cholesterol
-// NA = sodium
