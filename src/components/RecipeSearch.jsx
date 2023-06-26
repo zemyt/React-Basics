@@ -111,9 +111,3 @@ export const RecipeSearch = ({ clickFn }) => {
     </>
   );
 };
-
-{
-  /* <Wrap padding="2rem" justify="center" spacing="2rem">
-  <RecipeList recipes={matchedRecipes} clickFn={clickFn} />
-</Wrap>; */
-}
