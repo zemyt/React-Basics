@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { React } from "react";
 
+// Big card component with specific information about selected recipe
 export const RecipeItemSelected = ({ recipe, clickFn }) => {
   return (
     <>

@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { React } from "react";
 
+// Card component including basic information about recipe
 export const RecipeItem = ({ recipe, clickFn }) => {
   return (
     <Card
