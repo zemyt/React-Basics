@@ -15,6 +15,7 @@ export const RecipeSearch = ({ clickFn }) => {
     setSearchField(event.target.value);
   };
 
+  // Checks for user input and returns a list of matched recipes (considers filter)
   const matchedRecipes = recipes.filter((recipe) => {
     let isLabelMatched = [];
     let areHealthLabelsMatched = [];
@@ -76,6 +77,7 @@ export const RecipeSearch = ({ clickFn }) => {
 
   return (
     <>
+      {/* search field */}
       <Center>
         <Input
           size="lg"
@@ -90,6 +92,7 @@ export const RecipeSearch = ({ clickFn }) => {
         />
       </Center>
 
+      {/* search filters */}
       <Center>
         <RadioGroup onChange={setSeatchValue} value={searchValue}>
           <Wrap marginLeft="10px" marginRight="10px" justify="center">
@@ -101,6 +104,7 @@ export const RecipeSearch = ({ clickFn }) => {
         </RadioGroup>
       </Center>
 
+      {/* recipe match results */}
       <Wrap padding="2rem" justify="center" spacing="2rem">
         {matchedRecipes.length > 0 ? (
           <RecipeList recipes={matchedRecipes} clickFn={clickFn} />
