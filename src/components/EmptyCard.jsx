@@ -11,7 +11,10 @@ export const EmptyCard = () => {
       borderRadius="lg"
       borderColor="transparent"
       shadow="lg"
-      s
+      _hover={{
+        transform: "scale(1.01)",
+        transition: "transform 0.1s ease",
+      }}
     >
       <Image
         src={image}
